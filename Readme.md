@@ -33,11 +33,17 @@ python3 algorithm-a.py --generations 2 demo.svg
 # Laser Cutting Tiles
 
 Since the tiles are aperiodic, there is not a simple way to arrange the tiles for
-laser cutting. Simply spacing the tiles in a grid leaving significant waste between tiles.
+laser cutting. Simply spacing the tiles in a grid leaves significant waste between tiles.
 The algorithm for producing a tiling does not produce a simple rectangular tiling. By
 starting with a tiling with a large enough rectangular patch for the intended cut-stock,
 use a program like [Inkscape](https://inkscape.org/) to remove the paths beyond the
 desired cut area.
+
+The base tile has 14 paths. Each generation packs seven copies of the previous supertile
+to form a new supertile. The python3 code is careful to no duplicate the edge paths
+where supertiles are glued together. The end result is that the tiling files are composed
+on many short paths. This may present challenges when cutting the paths depending
+on the laser, software, and settings.
 
 ## Laser Cutting Example
 
