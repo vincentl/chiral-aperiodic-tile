@@ -60,6 +60,25 @@ on which generation produced the path - 0 is red, 1 is cyan, etc. The four red n
 the anchor nodes used in Algorithm A to orient the current generation supertile in
 producing the next generation supertile.
 
+# Optional Tile Label
+
+Experimental code to add a text label to each tile is available through command line options. A 
+font name, size, and the label string are all required to activate the feature.
+
+```bash
+python3 algorithm-a.py --generations 2 --label 'Example' --font Helvetica --font-size 5.1mm label.svg
+```
+# Optional Control of Tile Border Colors
+
+By default, the python3 code uses a different border color for each generation. To change the list of 
+colors or force a single color, the command line option `--color` takes a string of color characters and
+cycles through the list of colors for each generation. By making the list one long, a single color is used.
+
+```bash
+python3 algorithm-a.py --generations 3 --color r red.svg
+```
+
+
 # License
 
 Python3 Tiling Generator for a Chiral Aperiodic Monotile © 2024 by Vincent
